@@ -12,7 +12,7 @@
     <ui:define name="head">
         
 
-        <title>Index</title>
+        <title>Página Principal</title>
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"></link>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet"></link>
@@ -35,7 +35,7 @@
 
                 <div class="col-xs-9 col-sm-8 col-md-4 col-mg-4 letter">
                     <a href="index.xhtml" id="prin">
-                        <img src="http://localhost:8080/Practica3_EJB_JSF_JPA/resources/img/ll.png" height="55px" width="105px"/>
+                        <img src="http://localhost:8080/Practica3_EJB_JSF_JPA/resources/img/ll.png" height="55px" width="305px"/>
                     </a>
                 </div>
 
@@ -46,7 +46,7 @@
                     <li class="nav-item">
                         <h:link class="nav-login text-white" id="mi-cuenta" outcome="admin" rendered="#{loginBean.isLogin()}">
                             <i style="font-size: 17px;" class="fa fa-user"></i>
-                            <span class="clearfix d-none d-sm-inline-block ml-2" style="font-size: 17px;">Mi cuenta</span>
+                            <span class="clearfix d-none d-sm-inline-block ml-2" style="font-size: 17px;">Mi Cuenta</span>
                         </h:link>  
 
                     </li>
@@ -54,76 +54,33 @@
             </nav>
         </header>
 
-
-
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="zoom">
-
-
-                <div class="container">
-
-                    <center>
-
-
-                        <div class="masthead-subheading" style="color:black;">MiBodega.COM</div>
-                        <div class="masthead-heading text-uppercase" style="color:black;">Generación De Productos Online</div>
-
-
-                    </center>
-
-
-
-
-                </div>
-            </div>
-        </header>
-
-        <br></br>   
         <br></br>   
 
         <section class="page-section bg-light" id="team">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Catálogos en línea</h2>
+                <h2 class="section-heading text-uppercase">Nuestro Catalogo</h2>
                 <h3 class="section-subheading text-muted"></h3>
             </div>
-
             <div class="container"> 
                 <div class="row row-cols-1 row-cols-md-4">
-
                     <c:forEach var="p" items="#{indexBean.productos}">
-
-
-
-
-
                         <div class="col mb-4">
                             <!-- Card -->
                             <div class="card">
                                 <!--Card image-->
                                 <div class="view overlay">
-                                    <h:graphicImage  class="card-img-top w-100 h-100" 
-                                                     value = "https://www.marketingdirecto.com/wp-content/uploads/2019/07/retail-carrito-compra.jpg" alt="Card image cap"/>
+                                    <h:graphicImage  class="card-img-top w-100 h-100" value = "https://www.marketingdirecto.com/wp-content/uploads/2019/07/retail-carrito-compra.jpg" alt="Card image cap"/>
                                 </div>
-
                                 <!--Card content-->
                                 <div class="card-body" >
                                     <!--Title-->
                                     <h4 class="card-title">#{p.nombre}</h4>
                                     <!--Text-->
-
                                     <p class="card-text">Categoria: #{p.categoria.nombre}</p>
-
-
-
                                     <p class="card-text">Bodega: </p>
                                     <c:forEach var="inventario"  items="#{p.inventarios}">
                                         <p class="card-text"> #{inventario.bodega.nombre} </p>
                                     </c:forEach>
-
-
-
-
                                     <p class="text-right font-weight-bold h5 text-secondary"> #{p.precio} $</p>
                                     <!--   <button type="button" class="btn btn-light-blue btn-md"></button> -->
                                 </div>
@@ -131,40 +88,31 @@
                                     <h:form>
                                         <h4 class="card-title text-md-left" >Descripcion</h4>
                                         <p class="card-text"> #{p.categoria.descripcion}</p>
-
-
                                     </h:form>
                                 </div>
-
-
                             </div>
                             <!-- Card -->
-
                         </div>
                     </c:forEach>
-
                 </div>
             </div>
-
         </section>    
 
         <!-- About-->
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">MISION-VISION-VALORES</h2>
-
+                    <h2 class="section-heading text-uppercase">MISION, VISION Y VALORES</h2>
                 </div>
                 <ul class="timeline">
                     <li>
                         <div class="timeline-image" style="background-color: rgb(87, 247, 14)"></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-
-                                <h4 class="subheading">Misión</h4>
+                                <h4 style="text-align: center;" class="subheading">Misión</h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="text-muted">Mejorar la calidad y reducir el costo de vida de nuestros clientes, colaboradores – asociados, proveedores, accionistas y la comunidad en general, a través de la provisión de productos y servicios de optima calidad de la manera
+                                <p style="text-align: center;" class="text-muted">Mejorar la calidad y reducir el costo de vida de nuestros clientes, colaboradores – asociados, proveedores, accionistas y la comunidad en general, a través de la provisión de productos y servicios de optima calidad de la manera
                                     mas eficiente y con la mejor atención al público.
                                 </p>
                             </div>
